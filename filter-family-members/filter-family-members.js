@@ -55,7 +55,6 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   function check(i, j, array) {
   	var i = i || 0;
   	var j = j || 0;
-  	var array = array || [];
   	var test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
 
   	if (test === truthTest) {
