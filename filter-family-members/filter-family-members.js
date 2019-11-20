@@ -52,5 +52,6 @@
 
 var filterFamilyMembers = function (familyTree, truthTest) {
   // All your code in this function body
+  var
 };
 
