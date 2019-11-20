@@ -52,6 +52,13 @@
 
 var filterFamilyMembers = function (familyTree, truthTest) {
   // All your code in this function body
-  var
+  var i = i || 0;
+  var test = Object.values(familyTree)[i];
+
+  if(Object.values(familyTree)[i] === truthTest) {
+  	return truthTest;
+  }
+  i++;
+  return filterFamilyMembers(family)
 };
 
