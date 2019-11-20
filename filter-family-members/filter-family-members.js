@@ -51,16 +51,20 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   var i = 0;
   var array = [];
 
-  function check(i, array) {
+  function check(i, j, array) {
   	var i = i || 0;
+  	var = j || 0;
   	array = array || [];
-  	var test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
+  	test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
 
   	if (truthTest(test)) {
   		array.push(truthTest);
   	}
   	if (i === Object.keys(familyTree).length) {
   		return array;
+  	}
+  	if (Object.values(familyTree)[i] === familyTree.children && familyTree.children !== []) {
+  		return
   	}
   	return check(i + 1, array);
 	}
