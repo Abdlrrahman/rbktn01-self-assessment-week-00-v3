@@ -72,6 +72,6 @@ var filterFamilyMembers = function (familyTree, truthTest) {
 };
 
 
- filterFamilyMembers(familyTree, livesInBerkeley)
+ filterFamilyMembers(familyTree, livesInBerkeley);
 
 // returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
