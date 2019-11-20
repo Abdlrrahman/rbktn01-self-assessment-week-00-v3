@@ -12,41 +12,41 @@
 // }
 //
 // EXAMPLE:
-//
-// var familyTree = {
-//   'firstName': 'Beth',
-//   'lastName': 'Johnson',
-//   'location': 'San Francisco',
-//   'children': [
-//     {
-//       'firstName': 'Beth Jr.',
-//       'lastName': 'Johnson',
-//       'location': 'Berkeley',
-//       'children': [
-//         {
-//           'firstName': 'Smitty',
-//           'lastName': 'Won',
-//           'location': 'Beijing',
-//           'children': []
-//         }
-//       ]
-//     },
-//     {
-//       'firstName': 'Joshie',
-//       'lastName': 'Wyattson',
-//       'location': 'Berkeley',
-//       'children': []
-//     }
-//   ]
-// };
-//
-// var livesInBerkeley = function (familyMember) {
-//   return familyMember.location === 'Berkeley';
-// }
-//
-// filterFamilyMembers(familyTree, livesInBerkeley)
-//
-// returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
+
+ var familyTree = {
+   'firstName': 'Beth',
+   'lastName': 'Johnson',
+   'location': 'San Francisco',
+   'children': [
+     {
+       'firstName': 'Beth Jr.',
+       'lastName': 'Johnson',
+       'location': 'Berkeley',
+       'children': [
+         {
+           'firstName': 'Smitty',
+           'lastName': 'Won',
+           'location': 'Beijing',
+           'children': []
+         }
+       ]
+     },
+     {
+       'firstName': 'Joshie',
+       'lastName': 'Wyattson',
+       'location': 'Berkeley',
+       'children': []
+     }
+   ]
+ };
+
+ var livesInBerkeley = function (familyMember) {
+   return familyMember.location === 'Berkeley';
+ }
+
+ filterFamilyMembers(familyTree, livesInBerkeley)
+
+ returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
 
 
 
@@ -61,7 +61,7 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   	if (test === truthTest) {
   		array.push(test);
   	}
-  	if (i === familyTree.length) {
+  	if (i === familyTree.keys.length) {
   		return array;
   	}
   	return check(i + 1, array);
