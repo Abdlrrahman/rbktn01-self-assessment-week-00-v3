@@ -61,7 +61,7 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   	if (truthTest(test)) {
   		array.push(truthTest);
   	}
-  	if (i === Object.keys(familyTree).length) {
+  	if (i === Object.keys(familyTree).length && j === Object.keys(familyTree.children).length) {
   		return array;
   	}
   	if (Object.values(familyTree)[i] === familyTree.children && familyTree.children !== []) {
