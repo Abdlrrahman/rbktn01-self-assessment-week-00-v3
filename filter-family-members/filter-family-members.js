@@ -53,9 +53,9 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   var array = [];
 
   function check(i, j, array) {
-  	var test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
+  	var test = Object.values(familyTree.firstName)[i] + Object.values(familyTree.lastName)[i];
 
-  	if (test === truthTest) {
+  	if (truthTest(test)) {
   		array.push(truthTest);
   	}
   	if (i === Object.keys(familyTree).length || j === Object.keys(familyTree.children).length) {
@@ -63,7 +63,7 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   	}
   	if (Object.values(familyTree)[i] === familyTree.children && familyTree.children !== []) {
   		test = (familyTree.firstName)[i][j] + (familyTree.lastName)[i][j];
-  		if (test === truthTest) {
+  		if (truthTest(test)) {
   			array.push(truthTest);
   		}
   		return check(i, j + 1, array);
