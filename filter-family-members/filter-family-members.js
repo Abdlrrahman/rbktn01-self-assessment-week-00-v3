@@ -49,11 +49,12 @@
 var filterFamilyMembers = function (familyTree, truthTest) {
   // All your code in this function body
   var i = 0;
+  var j = 0;
   var array = [];
 
   function check(i, j, array) {
   	var i = i || 0;
-  	var = j || 0;
+  	var j = j || 0;
   	var array = array || [];
   	var test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
 
@@ -65,11 +66,14 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   	}
   	if (Object.values(familyTree)[i] === familyTree.children && familyTree.children !== []) {
   		test = (familyTree.firstName)[i][j] + (familyTree.lastName)[i][j];
-  		if (true) {}
+  		if (truthTest(test)) {
+  			array.push(truthTest);
+  		}
+  		return check(i, j + 1, array);
   	}
-  	return check(i + 1, array);
+  	return check(i + 1, j, array);
 	}
-  return check(i, array);
+  return check(i, j, array);
 };
 
 
