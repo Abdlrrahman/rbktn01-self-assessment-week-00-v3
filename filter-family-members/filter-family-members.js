@@ -44,10 +44,6 @@
    return familyMember.location === 'Berkeley';
  }
 
- filterFamilyMembers(familyTree, livesInBerkeley)
-
- returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
-
 
 
 var filterFamilyMembers = function (familyTree, truthTest) {
@@ -56,12 +52,14 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   var array = [];
 
   function check(i, array) {
-  	var test = Object.values(familyTree)[i];
+  	var i = i || 0;
+  	array = array || [];
+  	var test = (familyTree.firstName)[i] + (familyTree.lastName)[i];
 
-  	if (test === truthTest) {
-  		array.push(test);
+  	if (truthTest(test)) {
+  		array.push(truthTest);
   	}
-  	if (i === familyTree.keys.length) {
+  	if (i === Object.keys(familyTree).length) {
   		return array;
   	}
   	return check(i + 1, array);
@@ -69,3 +67,7 @@ var filterFamilyMembers = function (familyTree, truthTest) {
   return check(i, array);
 };
 
+
+ filterFamilyMembers(familyTree, livesInBerkeley)
+
+// returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
